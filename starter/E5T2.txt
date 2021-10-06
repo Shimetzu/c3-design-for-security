@@ -1,13 +1,30 @@
 # Identify tools that will allow you to do the following:
 
 ## Scan infrastructure as code templates
+- Terrascan
+- Regula
 
 ### Example vulnerability
+- No encrypt S3 buckets.
+- No configure correctly SG to prevent trafic from all sources to port 22 or 3389.
+- No disable SSH login with password.
+- No configure correctly IAM policy to S3 buckets.
 
 ##Scan AMI’s or containers for OS vulnerabilities
+Aquasec
 
 ### Example vulnerability
+- Need to update SO Docker image to fix some vulnerability.
 
 ##Scan an AWS environment for cloud configuration vulnerabilities
+- AWS Config
+- AWS Inspector
+- AWS GuardDuty
+- AWS Security Hub
+- AWS CloudTrail
 
 ### Example vulnerability
+- Force brute attack.
+- Don't control traffic with SG.
+- Public access to all instances.
+- Public access to all S3 Buckets.

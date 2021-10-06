@@ -1,3 +1,21 @@
 Research and analyze which of the vulnerabilities appear to be related to the code that was deployed for the environment in this project.
+- At the inspector, we can see that all ports are reachable, including the most critical ones: Telnet and FTP.
+
+- At the security hub we can see 13 failed Security standars that have failed:
+-- Ensure MFA/hardware MFA is enabled for the root account.
+-- Ensure no SG allow ingress from 0.0.0.0/0 to port 22.
+-- Ensure default SG of VPC restrict all traffic.
+-- Ensure no SG allow ingress from 0.0.0.0/0 to port 3389.
+-- Ensure IAM password policy requires minimum password length of 14 or greater and expire at 90 days or less and prevents reuse.
+-- Ensure CloudTrail logs are encrypted at rest using KMS CKMs.
+-- Ensure VPC flow logging is enabled in VPC.
+-- Ensure CloudTrail trails are integrated with CloudWatch Logs.
+-- Ensure support role has been created to manage incidents with AWS Support.
 
 Bonus - provide recommendations on how to remediate the vulnerabilities.
+-- Change the configuration of ports reachable for the instances to just 80 and 443.
+-- If is needed, allow trafic to port 22 and 3389 from controlet IP's with SG control.
+-- Enable MFA for root user, change password policy and create support role to manage incidents.
+-- Enable CloudTrail logs and configure correctly with CloudWatch.
+-- Change SG to restrict all traffic by default.
+-- Encrypt S3 buckets (not just the logs ones).

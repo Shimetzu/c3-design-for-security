@@ -1,3 +1,12 @@
 # Describe GuardDuty findings that were detected related to the brute force attack
+I had problems to see the GuardDuty findings. I've googled and I've found that the attack could be:
+    UnauthorizedAccess:EC2/SSHBruteForce to port 22 (because is an SSH brute force attack) that I performed using hydra.
+Also I've attached the screenshot with the attack, the result of the vpc log flow (where I can see port 22) and the GuardDuty with no findings.
 
 # Research the AWS Guard Duty documentation page and explain how GuardDuty may have detected this attack - i.e. what was its source of information.
+GuardDuty is in constat monitoring to CloudTrail, VPC Flow Logs and DNS Logs. From the VPC Flow logs, as I've done because GuardDuty in my case did not work as expected,
+GuardDuty can find the attack and detect it.
+
+# Personal comment
+I hope to other students this exercice works as expected. I'm not happy with GuardDuty because for be util, this kind of attacks It has to be detected in 2-5 minutes and,
+in my case, after some hours is not. I hope I can pass the review knowing that I don't have the findings but it's all well configurated. Thanks.

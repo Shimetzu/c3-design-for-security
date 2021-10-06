@@ -1,0 +1,10 @@
+Based on the architecture diagram, and the steps you have taken so far to upload data and access the application web service, identify at least 2 obvious poor practices as it relates to security.  Include justification.
+
+# Poor practice 1
+All the buckets have the default encryption disabled, also the versioning:
+- With the encryption disabled, the files are exposet to unauthorized users that can read the files without permition.
+- With the versioning disabled, a rasomware attack it's really dificult to solve, but with versioning enable it's easy because you can restore the previous file.
+# Poor practice 2
+The application instance it's on the public subnet also the ApplicationSG allows all trafic from all sources (ports and protocols):
+- I'll put the application instance on a private subnet, this way it's not directly exposet to the internet.
+- Change the SG to allow only trafic from port 80 and 443 (I would prefer just port 443 with an SSL certificate). This can prevent mutiples types of attacks and just expose what you need to expose.

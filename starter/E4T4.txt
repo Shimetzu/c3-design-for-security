@@ -1,8 +1,12 @@
-
 # What additional architectural change can be made to reduce the internet facing attack surface of the web application instance.
+Like we studied at the course, the best way to prevent attracks to the application instance is disabling any kind of external access to the instance and just permit
+the internet traffic need it for the web app. Using containers we can deploy the instance prepared in order to don't be need any access to update the SO.
 
 # Assuming the IAM permissions for the S3 bucket are still insecure, would creating VPC private endpoints for S3 prevent the unauthorized access to the secrets bucket.
+We still need IAM permissions to prevent unauthorized access, creating a VPC private doesn't fix this problem and a correction to he IAM permissions is still needed.
 
 # Will applying default encryption setting to the s3 buckets encrypt the data that already exists?
+No, You still need to download and re-upload the existing files to apply the encryption to those.
 
 # What would happen if the original cloud formation templates are applied to this environment.
+All the work that we've made will be lost, so it's necessary to update the CloudFormation templates.
